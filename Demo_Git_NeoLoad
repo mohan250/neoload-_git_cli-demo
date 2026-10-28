@@ -8,12 +8,12 @@ on:
         default: 'https://neoload-api.saas.neotys.com/'
       token:
         required: true
-        description: 'b303918dc08c7c523c1ff6068835dac82331e51c6e5f391c'
-        default: 'specify_token_or_get_it_from_credentials'
+        description: 'NeoLoad Web Token'
+        default: '31a68a727dbbef90b422f30bae4072aa161ae968c9f9f131'
       zone_id:
         required: true
         description: 'Zone identifier'
-        default: 'defaultzone'
+        default: 'y1e48'
 
 jobs:
   neoload_cli_demo:
@@ -34,7 +34,7 @@ jobs:
       - name: "Prepare NeoLoad test"
         run: >
           neoload login --url ${{ github.event.inputs.api_url }} ${{ github.event.inputs.token }} \
-                  test-settings --zone ${{ github.event.inputs.zone_id }} --scenario 'simpledemo' createorpatch "My Github Test With CLI" \
+                  test-settings --zone ${{ github.event.inputs.zone_id }} --scenario 'scenario1' createorpatch "My Github Test With CLI" \
                   project --path C:\temp\testproject.YAML upload
 
       - name: "NeoLoad run test"
