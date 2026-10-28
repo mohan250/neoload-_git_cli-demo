@@ -18,7 +18,7 @@ on:
 jobs:
   neoload_cli_demo:
     name: NeoLoad CLI demo github action
-    runs-on: ubuntu-latest
+    runs-on: OS Name	Microsoft Windows 11 Enterprise
     steps:
       - name: Checkout local code
         uses: actions/checkout@v5
